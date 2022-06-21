@@ -1,0 +1,7 @@
+.app {
+  border: #417825 solid 2px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

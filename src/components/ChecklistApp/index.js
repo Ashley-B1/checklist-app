@@ -2,6 +2,24 @@ import React from 'react';
 import './ChecklistApp.css';
 
 const Checklist = () => {
+  const options = [
+    {
+      idx: 0,
+      name: 'Kosher',
+      checked: false
+    },
+    {
+      idx: 1,
+      name: 'No Celery (inc celeriac)',
+      checked: false
+    },
+    {
+      idx: 2,
+      name: 'No Egg',
+      checked: false
+    },
+  ]
+
   return (
     <div className='chl-section'>
       <div id='val-sel'>
@@ -10,24 +28,27 @@ const Checklist = () => {
         </h1>
       </div>
       <ul id='chk-list'>
-        <li className='chk-items'>
-          <input type='checkbox' className='option' name='select-all' />
-          <label for='select-all'>Select All</label>
+        <li>
+          <label className='options'>
+            <input type='checkbox' />
+            <span className='chckd'></span>
+            <p>Select All</p>
+          </label>
         </li>
-        <li className='chk-items'>
-          <input type='checkbox' className='option' name='kosher' />
-          <label for='Kosher'>Kosher</label>
-        </li>
-        <li className='chk-items'>
-          <input type='checkbox' className='option' name='no-cel' />
-          <label for='no-cel'>No Celery</label>
-        </li>
-        <li className='chk-items'>
-          <input type='checkbox' className='option' name='no-egg' />
-          <label for='no-egg'>No Egg</label>
-        </li>
+        {options.map(option => (
+          <li key={option.idx}>
+            <label className='options'>
+              <input
+                type='checkbox'
+                name={option.idx}
+                value={option.name}
+              />
+              <span className='chckd'></span>
+              <p>{option.name}</p>
+            </label>
+          </li>
+        ))}
       </ul>
-
       <div className='btn-sec'>
         <button id='clear'>
           Clear All

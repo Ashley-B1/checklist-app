@@ -15,25 +15,32 @@
 
 #val-sel {
   width: 95%;
-  height: 7vh;
+  height: fit-content;
   margin-top: .7rem;
   display: flex;
   align-items: center;
   background-color: #DDCDA9;
   border-radius: .5rem;
   margin-bottom: 2.6rem;
+  padding: .7rem;
 }
 
-#val-sel > h1 {
+#val-sel > p {
   background-color: #DDCDA9;
   font-weight: 400;
   font-size: 2rem;
 }
 
+#sel-items {
+  border: solid red 2px;
+  background-color: transparent;
+  margin-top: .2rem;
+  font-size: 1.5rem;
+}
+
 #chk-list {
   list-style-type: none;
   align-self: flex-start;
-  border-bottom: gray 2px solid;
   width: 100%;
 }
 
@@ -112,11 +119,13 @@ input {
 }
 
 .btn-sec {
-  margin-top: .4rem;
+  /* margin-top: .4rem; */
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: .4rem;
+  padding: .9rem 0;
+  border-top: solid gray 2px;
+  border-bottom: solid gray 2px
 }
 
 #clear {
@@ -127,4 +136,11 @@ input {
   color: #417825;
   font-weight: 600;
   border-radius: 10px;
+  cursor: pointer;
+}
+
+#clear:hover {
+  transition: ease-in .5s;
+  background-color: #417825;
+  color: #DEDFDA;
 }
